@@ -3,14 +3,8 @@ import { Navigate } from 'react-router-dom';
 
 export default function ProtectRoute({children}) {
 
-  let token = localStorage.getItem('token');
-  if(token==null){
-    return <Navigate to='/logen'/>
-  }
-
-  return (
-    <>
-    {children}
-    </>
-  )
+  const token = localStorage.getItem('token');
+  return <>
+  {token ?children:<Navigate to={'/login'}/>}
+  </>
 }
