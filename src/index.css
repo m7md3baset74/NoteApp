@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+body {
+    @apply text-slate-600
+}
+.btn-success{
+     @apply bg-green-600 hover:bg-green-700
+}
+.btn-danger{
+    @apply bg-red-600 hover:bg-red-700
+}
+.btn{
+    @apply text-white p-3 rounded-md block mx-1.5
+}
+body, html {
+    @apply min-h-screen bg-gray-950;
+    margin: 0;
+    padding: 0;
+}
