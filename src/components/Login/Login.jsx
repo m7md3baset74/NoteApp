@@ -3,7 +3,7 @@ import * as Yup from 'yup'
 import React, { useContext, useState } from 'react'
 import axios from 'axios';
 import { UserContext } from '../../context/UserContext';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,  } from 'react-router-dom';
 
 
 export default function Login() {
@@ -73,13 +73,23 @@ export default function Login() {
   <span className="font-medium">{formik.errors.email} </span>
 </div>}
   
-  <div className="mb-5">
+  <div>
     <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
     <input onBlur={formik.handleBlur} onChange={formik.handleChange} type="password" name='password' id="password" value={formik.values.password} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your Password" required />
   </div>
   {formik.errors.password && formik.touched.password && <div className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
   <span className="font-medium">{formik.errors.password} </span>
 </div>}
+
+<p className="mb-5 text-sm  text-gray-600">
+  Don't have an account?
+  <span
+    onClick={() => navigate('/register')}
+    className="ml-1 text-blue-500 hover:underline cursor-pointer"
+  >
+    Create an account
+  </span>
+</p>
   
   <button type="submit" className="bg-[url('/img/text.jpg')] bg-center bg-cover text-orange-50  focus:ring-3 focus:outline-none focus:ring-red-700 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center ">
     
